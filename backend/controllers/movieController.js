@@ -16,12 +16,18 @@ const generateMovieRecommendation = async (req, res) => {
       });
     }
 
-    const prompt = `
-    Recommend 3 movies in  genre "${genre}" for someone in a "${mood}" mood.
-    Respond strictly in JSON with this format:
-    {
-      "movies": ["Movie1", "Movie2", "Movie3"]
-    }`;
+      const prompt = `
+I want you to recommend movies based on genre and mood.
+Here is one example:
+
+Input: genre = "Action", mood = "Excited"
+Output (JSON): { "movies": ["Mad Max: Fury Road", "John Wick", "Die Hard"] }
+
+Now, using the same format, recommend 3 movies.
+
+Input: genre = "${genre}", mood = "${mood}"
+Output (JSON):
+`;
 
     const result = await model.generateContent(prompt);
     let response = result.response.text();
