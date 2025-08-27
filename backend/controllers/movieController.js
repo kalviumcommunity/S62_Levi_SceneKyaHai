@@ -87,6 +87,18 @@ Respond only in JSON:
 }
 `;
 
+  // ==========================================================
+    // TEMPERATURE
+    // ==========================================================
+    
+//     const prompt = `Recommend 3 movies in the genre "${genre}" for someone in a "${mood}" mood.
+// Respond in JSON: { "movies": ["Movie1", "Movie2", "Movie3"] }`;
+
+//     const result = await model.generateContent({
+//       contents: [{ role: "user", parts: [{ text: prompt }] }],
+//       generationConfig: { temperature: 0.9 }, // higher = more creative
+//     });
+    
 
     // ========= CALL GEMINI =========
     const result = await model.generateContent(prompt);
