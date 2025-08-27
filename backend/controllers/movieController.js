@@ -18,10 +18,19 @@ const generateMovieRecommendation = async (req, res) => {
 
       const prompt = `
 I want you to recommend movies based on genre and mood.
-Here is one example:
+Here are some examples:
 
-Input: genre = "Action", mood = "Excited"
-Output (JSON): { "movies": ["Mad Max: Fury Road", "John Wick", "Die Hard"] }
+Example 1:
+Input: genre = "Comedy", mood = "Sad"
+Output (JSON): { "movies": ["The Intouchables", "Groundhog Day", "The Grand Budapest Hotel"] }
+
+Example 2:
+Input: genre = "Horror", mood = "Anxious"
+Output (JSON): { "movies": ["The Conjuring", "Hereditary", "Get Out"] }
+
+Example 3:
+Input: genre = "Romance", mood = "Happy"
+Output (JSON): { "movies": ["La La Land", "Notting Hill", "Crazy Rich Asians"] }
 
 Now, using the same format, recommend 3 movies.
 
