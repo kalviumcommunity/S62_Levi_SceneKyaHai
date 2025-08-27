@@ -51,7 +51,7 @@ function MovieGenerator() {
   };
 
   return (
-    <div>
+    <div className="max-w-lg mx-auto p-6 bg-white rounded-xl shadow-md">
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Genre Dropdown */}
         <div>
@@ -104,9 +104,20 @@ function MovieGenerator() {
         {movies.length > 0 && (
           <div>
             <h2 className="text-xl font-bold mb-3">🎥 Recommended Movies:</h2>
-            <ul className="list-disc list-inside space-y-1">
+            <ul className="space-y-3">
               {movies.map((movie, index) => (
-                <li key={index}>{movie}</li>
+                <li
+                  key={index}
+                  className="border p-3 rounded-lg shadow-sm bg-gray-50"
+                >
+                  <p className="font-semibold">{movie.title}</p>
+                  {movie.year && <p className="text-sm">Year: {movie.year}</p>}
+                  {movie.reason && (
+                    <p className="text-sm text-gray-600">
+                      Why: {movie.reason}
+                    </p>
+                  )}
+                </li>
               ))}
             </ul>
           </div>
