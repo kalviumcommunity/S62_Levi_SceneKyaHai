@@ -92,7 +92,7 @@ Respond only in JSON:
     const result = await model.generateContent(prompt);
     let response = result.response.text();
 
-    // 🧹 Clean up markdown fences if present
+    // Clean up markdown fences if present
     response = response.replace(/```json|```/g, "").trim();
 
     let parsed;
